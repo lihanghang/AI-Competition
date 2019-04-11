@@ -15,18 +15,19 @@ TOPIC_GENERALIZATION=1
 pythonpath='python'
 
 # the prefix of the file name used by the model, must be consistent with the configuration in network.py
-prefix=train
+# No need change it
+prefix='ucas'
 
 # put all data set that used and generated for training under this folder: datapath
 # for more details, please refer to the following data processing instructions
-datapath=./dataSets
+datapath='./dataSets'
 
 # in train stage, use "train.txt" to train model, and use "dev.txt" to eval model
 # the "train.txt" and "dev.txt" are the original data provided by the organizer and
 # need to be placed in this folder: datapath/resource/
 # the following preprocessing will generate the actual data needed for model training
 # DATA_TYPE = "train" or "dev"
-datatype=(train dev)
+datatype=　(train dev)
 
 # data preprocessing
 for ((i=0; i<${#datatype[*]}; i++))
@@ -39,10 +40,10 @@ do
     #     2. the sample data extracted from session data is in this folder: datapath/resource/
     #     3. the text file required by the model is in this folder: datapath
     #     4. the topic file used to generalize data is in this directory: datapath
-    corpus_file=${datapath}/resource/${datatype[$i]}.txt
-    sample_file=${datapath}/resource/sample.${datatype[$i]}.txt
-    text_file=${datapath}/${prefix}.${datatype[$i]}
-    topic_file=${datapath}/${prefix}.${datatype[$i]}.topic
+    corpus_file=${datapath}/resource/train.txt
+    sample_file=${datapath}/resource/sample.train.txt
+    text_file=${datapath}/${prefix}.train
+    topic_file=${datapath}/${prefix}.train.topic
 
     # step 1: firstly have to convert session data to sample data
     ${pythonpath} ./tools/convert_session_to_sample.py ${corpus_file} ${sample_file}

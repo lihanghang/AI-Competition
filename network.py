@@ -37,7 +37,7 @@ def model_config():
     # Data
     data_arg = parser.add_argument_group("Data")
     data_arg.add_argument("--data_dir", type=str, default="./dataSets/")
-    data_arg.add_argument("--data_prefix", type=str, default="train")
+    data_arg.add_argument("--data_prefix", type=str, default="ucas")
     data_arg.add_argument("--save_dir", type=str, default="./models/")
     data_arg.add_argument("--with_label", type=str2bool, default=False)
     data_arg.add_argument("--embed_file", type=str, default=None)
@@ -89,7 +89,7 @@ def model_config():
     misc_arg.add_argument("--gpu", type=int, default=-1)
     misc_arg.add_argument("--log_steps", type=int, default=100)
     misc_arg.add_argument("--valid_steps", type=int, default=200)
-    misc_arg.add_argument("--batch_size", type=int, default=128)
+    misc_arg.add_argument("--batch_size", type=int, default=64)
     misc_arg.add_argument("--ckpt", type=str)
     # misc_arg.add_argument("--ckpt", type=str, default="models/best.model")
     misc_arg.add_argument("--check", action="store_true")

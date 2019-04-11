@@ -17,10 +17,10 @@ def topic_materialization(input_file, output_file, topic_file):
     topic_materialization
     """
 
-    print(topic_file)
-    print(input_file)
     inputs = [line.strip() for line in open(input_file, 'r')]
     topics = [line.strip() for line in open(topic_file, 'r')]
+    print("topics_len: %d" % len(topics))
+    print("inputs_len: %d" % len(inputs))
     assert len(inputs) == len(topics)
 
     fout = open(output_file, 'w')

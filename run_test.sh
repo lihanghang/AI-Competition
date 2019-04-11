@@ -6,7 +6,7 @@
 ################################################################################
 
 # set gpu id to use
-export CUDA_VISIBLE_DEVICES=3
+export CUDA_VISIBLE_DEVICES=5
 
 # generalizes target_a/target_b of goal for all outputs, replaces them with slot mark
 TOPIC_GENERALIZATION=1
@@ -15,11 +15,11 @@ TOPIC_GENERALIZATION=1
 pythonpath='python'
 
 # the prefix of the file name used by the model, must be consistent with the configuration in network.py
-prefix=test
+prefix='ucas'
 
 # put all data set that used and generated for testing under this folder: datapath
 # for more details, please refer to the following data processing instructions
-datapath=./dataSets
+datapath='./dataSets'
 
 # in test stage, you can eval dev.txt or test.txt
 # the "dev.txt" and "test.txt" are the original data provided by the organizer and
@@ -29,7 +29,7 @@ datapath=./dataSets
 # because dev.txt is session data, you have all the utterances both of bot and user
 # after testing test.txt, you can upload the predict to the competition website to get result
 # DATA_TYPE = "dev" or "test"
-datapart=dev
+datapart='test'
 
 # ensure that each file is in the correct path
 #     1. put the data provided by the organizers under this folder: datapath/resource/
@@ -67,4 +67,3 @@ if [ "${datapart}"x != "test"x ]; then
     ${pythonpath} ./tools/convert_result_for_eval.py ${sample_file} ./output/test.result.final ./output/test.result.eval
     ${pythonpath} ./tools/eval.py ./output/test.result.eval
 fi
-
