@@ -15,7 +15,7 @@ TOPIC_GENERALIZATION=1
 pythonpath='python'
 
 # the prefix of the file name used by the model, must be consistent with the configuration in network.py
-prefix='ucas'
+prefix='train'
 
 # put all data set that used and generated for testing under this folder: datapath
 # for more details, please refer to the following data processing instructions

@@ -37,7 +37,7 @@ def model_config():
     # Data
     data_arg = parser.add_argument_group("Data")
     data_arg.add_argument("--data_dir", type=str, default="./dataSets/")
-    data_arg.add_argument("--data_prefix", type=str, default="ucas")
+    data_arg.add_argument("--data_prefix", type=str, default="train")
     data_arg.add_argument("--save_dir", type=str, default="./models/")
     data_arg.add_argument("--with_label", type=str2bool, default=False)
     data_arg.add_argument("--embed_file", type=str, default=None)
